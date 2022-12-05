@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="board">
+	<select id="boardList" resultType="com.test.dto.BoardDTO">
+		select * from board
+	</select>
+	
+	<select id="getBoardDetail" resultType="com.test.dto.BoardDTO">
+		select * from board where seq= #{seq}
+	</select>
+	
+	<select id="boardInsert" resultType="com.test.dto.BoardDTO">
+		insert into board values ((select nvl(max(seq), 0)+1 from board), #{title}, #{content}, 'admin', sysdate, 0)
+	</select>
+	
+	<select id="boardEdit" resultType="com.test.dto.BoardDTO">
+		update board set title = #{title }, content = #{content } where seq = ${seq }
+	</select>
+	
+	<select id="boardDelete" resultType="com.test.dto.BoardDTO">
+		delete from board where seq = #{seq }
+	</select>
+</mapper>
