@@ -59,8 +59,8 @@
 		  <li>
 		    <a class="acolor href="#">작품</a>
 		    <ul class="menu vertical nested">
-		      <li><a class="acolor" href="#">자연</a></li>
-		      <li><a class="acolor" href="#">도시</a></li>
+		      <li><a class="acolor" href="${path1 }/work/n.do">자연</a></li>
+		      <li><a class="acolor" href="${path1 }/work/c.do">도시</a></li>
 		    </ul>
 		  </li>
 		  <li>
