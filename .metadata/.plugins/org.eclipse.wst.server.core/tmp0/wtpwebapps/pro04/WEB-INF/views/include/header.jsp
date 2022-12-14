@@ -57,17 +57,16 @@
 		    </ul>
 		  </li>
 		  <li>
-		    <a class="acolor href="#">작품</a>
+		    <a class="acolor href="#">Best사진</a>
 		    <ul class="menu vertical nested">
 		      <li><a class="acolor" href="${path1 }/work/n.do">자연</a></li>
 		      <li><a class="acolor" href="${path1 }/work/c.do">도시</a></li>
 		    </ul>
 		  </li>
 		  <li>
-		    <a class="acolor href="#">전시관</a>
+		    <a class="acolor href="#">갤러리</a>
 		    <ul class="menu vertical nested">
-		      <li><a class="acolor" href="#">H전시관</a></li>
-		      <li><a class="acolor" href="#">J전시관</a></li>
+		      <li><a class="acolor" href="${path1 }/gallery.do">HJ갤러리</a></li>
 		    </ul>
 		  </li>
 		  <li>

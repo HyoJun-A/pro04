@@ -16,27 +16,26 @@
 	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 	<style type="text/css">
 		.content {
-			background-color: #0a0a0a;
+			background-color: #808080;
 		}
 		#simg {
 			margin: 0 auto;
 			width: 700px;
 			height: 700px;
-		}
-		.em {
-			color : #FEFEFE;
+			margin-top: 50px;
 		}
 		#ssimg img {
 			width: 700px;
 			height: 700px;
 			overflow: hidden;
 		}
+		em { padding-left: 20px;}
 	</style>
 </head>
 <body>
 <jsp:include page="../include/header.jsp" />
 <div class="content">
-	<em class="em">City</em>
+	 <em>City Poto Best4</em>
 	<!-- Swiper -->
     <div class="swiper mySwiper" id="simg">
       <div class="swiper-wrapper">
@@ -66,13 +65,6 @@
         grabCursor: true,
         autoplay : true,
         loop:true,
-        loopAdditionalSlides: 1,
-        cubeEffect: {
-          shadow: true,
-          slideShadows: true,
-          shadowOffset: 20,
-          shadowScale: 0.94,
-        },
         pagination: {
           el: ".swiper-pagination",
         },

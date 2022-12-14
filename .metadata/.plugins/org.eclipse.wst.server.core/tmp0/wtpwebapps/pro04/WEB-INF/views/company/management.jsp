@@ -23,7 +23,7 @@
 <div class="content">
 	<div class="grid-x grid-margin-x" id="b_wrap">
           <div class="medium-6 cell small-order-2 medium-order-1" id="title">
-            <h2>대표이사 안효준</h2>
+            <h2>CEO 안효준</h2>
 			<hr><br>
             <strong>주요경력</strong>
             <br>
@@ -31,7 +31,7 @@
             <br>
             <strong>2021.10.01 ~ 2022.11.01 HJpo 임원</strong>
             <br>
-            <strong>2022.11.01 ~ HJpoto 대표</strong>
+            <strong>2022.11.01 ~ HJpoto CEO</strong>
             <br>
           </div>
           <div class="medium-6 cell small-order-1 medium-order-2">

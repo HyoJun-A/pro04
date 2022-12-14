@@ -15,4 +15,9 @@ public class WebController {
 	public String hjcompany() throws Exception{
 		return "company/hjcompany";
 	}
+	
+	@GetMapping("/gallery.do")
+	public String hjgallery() throws Exception {
+		return "gallery/gallery";
+	}
 }
