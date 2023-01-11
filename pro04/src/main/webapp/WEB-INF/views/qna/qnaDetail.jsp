@@ -16,41 +16,81 @@
 <body>
 <jsp:include page="../include/header.jsp" />
 <div class="content" id="content">
-	    <div class="row column text-center">
-	      <h2 class="h1">Q&A 상세글</h2>
-	      <hr>
+	    <div class="row column">
+	      
 	      <div class="container">
-		      <table id="table1">
-		      	<tbody>
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">글 번호</th>
-		      			<td>${dto.no }</td>
-		      		</tr>	
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">글 제목</th>
-		      			<td>${dto.title }</td>
-		      		</tr>
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">글 내용</th>
-		      			<td><p>${dto.content }</p></td>
-		      		</tr>
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">작성자</th>
-		      			<td>${dto.author }</td>
-		      		</tr>
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">작성일시</th>
-		      			<td>${dto.regdate }</td>
-		      		</tr>
-		      	</tbody>
-		      </table>
+	      <div class="wrap"><br>
+	      <h2 class="title">Q&A 상세글</h2>
+	      <hr>
+		      <div class="table1">
+		      <div class="q_title">
+						<strong>
+							${dto.title }
+						</strong><hr>
+					</div>
+					<div class="q_content">
+						${dto.content }
+					</div>
+					<span class="q_date">
+						<fmt:parseDate value="${dto.regdate }" var="regdate" pattern="yyyy-MM-dd HH:mm:ss" />
+						<fmt:formatDate value="${regdate }" pattern="yyyy-MM-dd" />
+					</span> 
+					<span class="q_date">
+					작성자 : ${dto.author } <br> 글번호 : <span class="par">${dto.no }</span>
+					</span>
+		      </div><br>
+		      <div class="table1" id="at">
+		      </div>
+		       <script>
+			    $(document).ready(function(){
+			        var parno = $(".par").text();
+			        $.ajax({
+			          url:"${path1 }/qna/atail.do?parno=" + parno,
+			          //data:eno,
+			          dataType:"json",
+			          method:"GET"
+			        })
+			        .done(function(res){
+			          $.each(res, function(k, v){
+			          console.log(k);
+			          let str = "<span>" + v.author + " : " + v.content + "</span><br>";
+			          $("#at").append(str);
+			          });
+			        })
+			        .fail(function(){
+			          console.log("fail");
+			        });
+			    });
+			  </script>
+		      <br>
 				<div class="button-group">
-				  <a class="button" href="${path1 }/qna/list.do">글 목록</a>
-				  <a class="button" href="${path1 }/qna/delete.do?no=${dto.no}">글 삭제</a>
-				  <a class="button" href="${path1 }/qna/wright.do?no=${dto.no}">답변 작성</a>
-				  <a class="button" href="${path1 }/qna/edit.do?no=${dto.no}">글 수정</a>
+				  <a class="button hollow" href="${path1 }/qna/list.do">
+				   <span>목록
+			        <i class="fi-list"></i>
+			        </span>
+				  </a>
+				  <c:if test="${sid eq dto.author }">
+				  <a class="button hollow" href="${path1 }/qna/edit.do?no=${dto.no}">
+				  <span>수정
+			         <i class="fi-pencil"></i>
+			         </span>
+				  </a>
+				  <a class="button hollow alert" href="${path1 }/qna/delete.do?no=${dto.no}">
+				  <span>삭제
+			        <i class="fi-trash"></i>
+			        </span>
+			        </a>
+			        </c:if>	
+			        <c:if test="${not empty sid }">			  
+				  <a class="button hollow" href="${path1 }/qna/wright.do?no=${dto.no}">
+				  <span>답변 작성
+			        <i class="fi-plus"></i>
+			        </span>
+				  </a>
+				  </c:if>
 				</div>
 	      </div>
+	    </div>
 	    </div>
 	</div>
 		<jsp:include page="../include/footer.jsp" />

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.test.dto.QnaDTO;
 import com.test.service.QnaService;
@@ -82,19 +83,27 @@ public class QnaController {
 	}
 	
 	@GetMapping("wright.do")
-	public String qnaWrightForm(Model model) throws Exception {
+	public String qnaWrightForm(@RequestParam("no") int no,Model model) throws Exception {
+		model.addAttribute("no", no);
 		return "qna/qnaAdd2";
 	}
 	
 	@PostMapping("wright.do")
-	public String qnaWright(HttpServletRequest request, Model model) throws Exception {
+	public String qnaWright(HttpServletRequest request, @RequestParam("parno") int parno,Model model) throws Exception {
 		
 		QnaDTO qnaDTO = new QnaDTO();
 		qnaDTO.setAuthor(request.getParameter("author"));
 		qnaDTO.setTitle(request.getParameter("title"));
 		qnaDTO.setContent(request.getParameter("content"));
+		qnaDTO.setParno(parno);
 		qnaService.aAdd(qnaDTO);
 		return "redirect:list.do";
 	}
 	
+	@GetMapping("atail.do")
+	@ResponseBody
+	public List<QnaDTO> atail(@RequestParam("parno") int parno, Model model) throws Exception{
+		List<QnaDTO> list = qnaService.atail(parno);
+		return list;
+	}
 }

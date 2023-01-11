@@ -16,41 +16,49 @@
 <body>
 <jsp:include page="../include/header.jsp" />
 <div class="content">
+<div class="wrap"><br>
 	<h2 class="title">묻고 답하기</h2>
-	<table class="table" id="tb1">
+	<hr>
+	<table id="example" class="display" style="width:100%">
 		<thead>
 			<tr>
-				<th style="max-width:5px"></th><th>연번</th><th>제목</th><th>작성자</th><th>작성일</th>
+				<th style="max-width:5px">
+				</th>
+				<th>연번</th>
+				<th>제목</th>
+				<th>작성자</th
+				><th>작성일</th>
 			</tr>
 		</thead>
 		<tbody>
 		<c:forEach items="${qnaList }" var="vo" varStatus="status">
-		<tr>
-			<td><span style="color:transparent">${vo.parno }</span></td>
-			<td>
-				<c:if test="${vo.lev==0}">
-					<span>${vo.no }</span>
-				</c:if>
-				<c:if test="${vo.lev==1}">
-					<span style="color:white">${vo.no }</span>
-				</c:if>
-			</td>
-			<td><a href="./detail.do?no=${vo.no }">${vo.title }</a></td>
-			<td>${vo.author }</td>
-			<td>
-				<fmt:parseDate value="${vo.regdate }" var="regdate" pattern="yyyy-MM-dd HH:mm:ss" />
-	      		<fmt:formatDate value="${regdate }" pattern="yyyy-MM-dd" />
-	      	</td>
-		</tr>
+			<tr>
+				<td><span style="color:transparent">${vo.parno }</span></td>
+				<td>
+					<span>${status.count}</span>
+				</td>
+				<td><a href="./detail.do?no=${vo.no }">${vo.title }</a></td>
+				<td>${vo.author }</td>
+				<td>
+					<fmt:parseDate value="${vo.regdate }" var="regdate" pattern="yyyy-MM-dd HH:mm:ss" />
+		      		<fmt:formatDate value="${regdate }" pattern="yyyy-MM-dd" />
+		      	</td>
+			</tr>
 		</c:forEach>	
 		</tbody>
 	</table>
 	<c:if test='${not empty sid}'>
 	<div class="btn-group">
-		<a href="./insert.do" class="button is-danger">글 등록</a>
+		<a href="./insert.do" class="button hollow">글 등록</a>
 	</div>
 	</c:if>
 </div>
+</div>
+<script>
+$(document).ready(function () {
+    $("#example").DataTable();
+});
+</script>
 <jsp:include page="../include/footer.jsp" />
 </body>
 </html>

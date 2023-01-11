@@ -29,6 +29,7 @@
 	
 	<div class="content" id="con">
 	    <div class="row column text-center">
+	    <div class="wrap"><br>
 	      <h2 class="h1">회원가입</h2>
 	      <hr>
 	      <div class="container">
@@ -39,7 +40,7 @@
 			      			<th style="background-color:#dcdcdc">아이디</th>
 			      			<td>
 			      				<input type="text" name="id" id="id" placeholder="아이디 입력" pattern="^[a-z0-9]{5,12}" maxlength="12" required style="width:700px; float:left;">
-			      				<input type="button" id="idCkBtn" class="button" value="아이디 중복 체크" onclick="idCheck()">
+			      				<input type="button" id="idCkBtn" class="button hollow primary" value="아이디 중복 체크" onclick="idCheck()">
 			      				<input type="hidden" name="idck" id="idck" value="no"/>
 							<c:if test="${empty qid }">
 								<p id="msg" style="padding-left:0.1rem">아직 아이디 중복 체크를 하지 않으셨습니다.</p>
@@ -93,14 +94,14 @@
 			      				<input type="text" name="addr1" id="addr1" placeholder="기본주소 입력" maxlength="150" required><br><br>
 			      				<input type="text" name="addr2" id="addr2" placeholder="상세주소 입력" maxlength="90" required><br><br>
 			      				<input type="text" name="postcode" id="postcode" placeholder="우편번호 입력" maxlength="9" required>
-			      				<input type="button" id="isAddrBtn" class="button" value="주소 입력" onclick="findAddr()">
+			      				<input type="button" id="isAddrBtn" class="button hollow primary" value="주소 입력" onclick="findAddr()" style="float:left">
 			      				<input type="hidden" name="addrck" id="addrck" value="no"/>
 			      			</td>
 			      		</tr>
 			      		<tr>
-			      			<td colspan="2">
-			      				<input type="submit" class="submit success button" value="회원 가입" >
-								<input type="reset" class="reset button" value="취소" >
+			      			<td colspan="2" style="float:left;">
+			      				<input type="submit" class="button primary hollow" value="회원 가입" >
+								<input type="reset" class="button hollow alert button" value="취소" >
 			      			</td>
 			      		</tr>
 			      	</tbody>
@@ -178,6 +179,7 @@
 				}
 				</script>
 				<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	      </div>
 	      </div>
 	    </div>
 	</div>

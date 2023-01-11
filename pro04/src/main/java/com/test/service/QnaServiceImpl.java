@@ -43,6 +43,11 @@ public class QnaServiceImpl implements QnaService {
 	public void edit(QnaDTO qnaDTO) throws Exception {
 		qnaDAO.edit(qnaDTO);
 	}
+
+	@Override
+	public List<QnaDTO> atail(int parno) throws Exception {
+		return qnaDAO.atail(parno);
+	}
 	
 	
 }

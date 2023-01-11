@@ -43,6 +43,11 @@ public class QnaDAOImpl implements QnaDAO {
 	public void edit(QnaDTO qnaDTO) throws Exception {
 		sqlSession.update("qna.edit", qnaDTO);
 	}
+
+	@Override
+	public List<QnaDTO> atail(int parno) throws Exception {
+		return sqlSession.selectList("qna.atail", parno);
+	}
 	
 	
 }

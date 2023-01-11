@@ -11,4 +11,5 @@ public interface QnaDAO {
 	public void aAdd(QnaDTO qnaDTO) throws Exception;
 	public void del(int no) throws Exception;
 	public void edit(QnaDTO qnaDTO) throws Exception;
+	public List<QnaDTO> atail(int parno) throws Exception;
 } 

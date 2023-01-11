@@ -16,17 +16,18 @@
 <body>
 <jsp:include page="../include/header.jsp" />
 <div class="content" id="content">
-    <div class="row column text-center">
-      <h2 class="h1">자유게시판 글 목록</h2>
-      <hr>
+    <div class="row column">
       <div class="container">
-      	   <table class="table">
+      <div class="wrap"><br>
+      <h2 class="title">자유게시판 글 목록</h2>
+      <hr>
+      	   <table id="example" class="display" style="width:100%">
 		  <thead>
 		    <tr>
-		      <th><abbr title="fseq">fseq</abbr></th>
-		      <th><abbr title="title">title</abbr></th>
-		      <th><abbr title="nickname">nickname</abbr></th>
-		      <th><abbr title="regdate">regdate</abbr></th>
+		      <th><abbr title="fseq">연번</abbr></th>
+		      <th><abbr title="title">제목</abbr></th>
+		      <th><abbr title="nickname">작성자</abbr></th>
+		      <th><abbr title="regdate">작성일</abbr></th>
 		    </tr>
 		  </thead>
 		   <tbody>
@@ -42,13 +43,22 @@
 		    </c:forEach>
 		  </tbody>
 		</table>
+		<c:if test="${not empty sid }">
 		<div class="button-group">
-		  <a class="button" href="./insert.do">글 등록</a>
+		  <a class="button hollow" href="./insert.do"><span>글 등록
+        	  <i class="fi-plus"></i>
+        	 </span></a>
 		</div>
+		</c:if>
+      </div>
       </div>
     </div>
 </div>
-
+<script>
+$(document).ready(function () {
+    $("#example").DataTable();
+});
+</script>
 <jsp:include page="../include/footer.jsp" />
 </body>
 </html>

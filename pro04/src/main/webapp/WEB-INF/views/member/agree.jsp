@@ -22,6 +22,7 @@ padding: 24px; border:2px solid #eee; height:180px; overflow-y:auto; }
 <body>
  	<jsp:include page="../include/header.jsp"></jsp:include>
 <div class="content">
+<div class="wrap">
 	<h2 class="title">회원 약관 동의</h2>
 	<article class="agree_fr">
 <h2>제1장 총칙</h2>
@@ -911,8 +912,8 @@ padding: 24px; border:2px solid #eee; height:180px; overflow-y:auto; }
 		<label for="ck_item2" class="form-check-label">개인정보처리방침에 동의</label><br><br>
 	</div><br><hr><br>
 	<div class="btn-group">
-		<label for="ck_item3" onclick="protocol()" class="button is-info">전체 약관에 동의</label>
-		<button type="button" id="in_btn1" class="button is-info">다음 단계</button>
+		<label for="ck_item3" onclick="protocol()" class="button hollow primary">전체 약관에 동의</label>
+		<button type="button" id="in_btn1" class="button hollow primary">다음 단계</button>
 	</div>
 	<script>
 	var ck_item1 = document.getElementById("ck_item1");
@@ -931,6 +932,7 @@ padding: 24px; border:2px solid #eee; height:180px; overflow-y:auto; }
 		ck_item2.checked = true;
 	}
 	</script>
+</div>
 </div>
 <footer id="footer" class="footer-nav row expanded collapse">
 	<!-- 푸터 부분 인클루드 -->

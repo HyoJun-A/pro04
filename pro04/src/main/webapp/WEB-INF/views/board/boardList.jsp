@@ -12,46 +12,60 @@
 	<title>Insert title here</title>
 	<c:set var="path1" value="${pageContext.request.contextPath }" />
 	<jsp:include page="../include/head.jsp" />
-	<style type="text/css">
-		
+
+	<style>
+
 	</style>
 </head>
 <body>
 <jsp:include page="../include/header.jsp" />
 <div class="content" id="content">
-    <div class="row column text-center">
-      <h2 class="h1">공지사항 글 목록</h2>
-      <hr>
+    <div class="row column"><br>
+      
       <div class="container">
-      	   <table class="table">
-		  <thead>
-		    <tr>
-		      <th><abbr title="seq">seq</abbr></th>
-		      <th><abbr title="title">title</abbr></th>
-		      <th><abbr title="nickname">nickname</abbr></th>
-		      <th><abbr title="regdate">regdate</abbr></th>
-		    </tr>
-		  </thead>
-		   <tbody>
-		   <c:forEach items="${boardList }" var="dto">
-		    <tr>
-		      <td>${dto.seq }</td>
-		      <td><a href="./detail.do?seq=${dto.seq }">${dto.title }</a></td>
-		      <td>${dto.nickname }</td>
-		      <td>
-		      	<fmt:parseDate value="${dto.regdate }" var="regdate" pattern="yyyy-MM-dd HH:mm:ss" />
-		      	<fmt:formatDate value="${regdate }" pattern="yyyy-MM-dd" />
-		    </tr>
-		    </c:forEach>
-		  </tbody>
-		</table>
-		<div class="button-group">
-		  <a class="button" href="./insert.do">글 등록</a>
-		</div>
+	      <div class="wrap">
+	      <h2 class="title">공지사항 글 목록</h2>
+      		<hr>
+	      	<table id="example" class="display" style="width:100%">
+			  <thead>
+			    <tr>
+			      <th><abbr title="seq">연번</abbr></th>
+			      <th><abbr title="title">제목</abbr></th>
+			      <th><abbr title="nickname">작성자</abbr></th>
+			      <th><abbr title="regdate">작성일</abbr></th>
+			    </tr>
+			  </thead>
+			   <tbody>
+			   <c:forEach items="${boardList }" var="dto">
+			    <tr>
+			      <td>${dto.seq }</td>
+			      <td><a href="./detail.do?seq=${dto.seq }">${dto.title }</a></td>
+			      <td>${dto.nickname }</td>
+			      <td>
+			      	<fmt:parseDate value="${dto.regdate }" var="regdate" pattern="yyyy-MM-dd HH:mm:ss" />
+			      	<fmt:formatDate value="${regdate }" pattern="yyyy-MM-dd" />
+			    </tr>
+			    </c:forEach>
+			  </tbody>
+			</table>
+			<c:if test="${sid eq 'admin' }">
+			<div class="button-group">
+			  <a class="button hollow" href="./insert.do">
+			  <span>글 등록
+        	  <i class="fi-plus"></i>
+        	 </span>
+			  </a>
+			</div>
+			</c:if>
+			</div>
       </div>
     </div>
 </div>
-
+<script>
+$(document).ready(function () {
+    $("#example").DataTable();
+});
+</script>
 <jsp:include page="../include/footer.jsp" />
 </body>
 </html>

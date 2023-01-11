@@ -16,10 +16,12 @@
 <body>
 <jsp:include page="../include/header.jsp" />
 <div class="content" id="content">
-	    <div class="row column text-center">
-	      <h2 class="h1">공지사항 글 등록</h2>
-	      <hr>
+	    <div class="row column"><br>
+	     
 	      <div class="container">
+	      <div class="wrap">
+	       <h2 class="title">공지사항 글 등록</h2>
+	      <hr>
 	      	   <form action="./insert.do" method="post">
 					<table class="table">
 					   <tbody>
@@ -33,12 +35,25 @@
 					    </tr>
 					  </tbody>
 					</table>
-					<div class="buttons">
-					  <button type="submit" class="button is-success">등록</button>
-					  <button type="reset" class="button is-warning">취소</button>
-					  <a href="./list.do" class="button is-success">목록</a>
+					<div class="buttons" style="float:left;">
+						<a href="./list.do" class="button hollow">
+						<span>목록
+		        	  	<i class="fi-list"></i>
+		        	    </span>
+						</a>
+					  <button type="submit" class="button hollow">
+					  <span>등록
+		        	  	<i class="fi-plus"></i>
+		        	    </span>
+					  </button>
+					  <button type="reset" class="button hollow alert">
+					  <span>취소
+			        <i class="fi-trash"></i>
+			        </span>
+			        </button>
 					</div>
 				</form>
+				</div>
 	      </div>
 	    </div>
 	</div>

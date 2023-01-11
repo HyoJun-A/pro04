@@ -3,11 +3,16 @@
 <mapper namespace="qna">
 	<!-- qna목록 -->
 	<select id="list" resultType="com.test.dto.QnaDTO">
-		select * from qna
+		select * from qna where lev = 0
 	</select>
 	<!-- 상세 글 보기 -->
 	<select id="detail" resultType="com.test.dto.QnaDTO">
 		select * from qna where no= #{no}
+	</select>
+	
+	<!-- 답변 글 보기 -->
+	<select id="atail" resultType="com.test.dto.QnaDTO">
+		select * from qna where parno= #{parno} and lev=1
 	</select>
 	
 	<!-- 질문 작성 -->

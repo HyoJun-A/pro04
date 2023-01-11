@@ -16,44 +16,60 @@
 <body>
 <jsp:include page="../include/header.jsp" />
 <div class="content" id="content">
-	    <div class="row column text-center">
-	      <h2 class="h1">자유게시판 상세 보기</h2>
-	      <hr>
+	    <div class="row column text-center"><br>
+	      
 	      <div class="container">
-		      <table id="table1">
-		      	<tbody>
-		
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">글 번호</th>
-		      			<td>${dto.fseq }</td>
-		      		</tr>	
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">글 제목</th>
-		      			<td>${dto.title }</td>
-		      		</tr>
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">글 내용</th>
-		      			<td><p>${dto.content }</p></td>
-		      		</tr>
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">작성자</th>
-		      			<td>${dto.nickname }</td>
-		      		</tr>
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">작성일시</th>
-		      			<td>${dto.regdate }</td>
-		      		</tr>
-		      		<tr>
-		      			<th style="background-color:#dcdcdc">읽은 횟수</th>
-		      			<td>${dto.visited }</td>
-		      		</tr>
-		      	</tbody>
-		      </table>
+	      <div class="wrap">
+	      <h2 class="title">자유게시판 상세 보기</h2>
+	      <hr>
+		      <div class="table1">
+		      	
+					<div class="q_title">
+						<strong>
+							${dto.title }
+						</strong><hr>
+					</div>
+					<div class="q_content">
+						${dto.content }
+					</div>
+					<span class="q_date">
+						<fmt:parseDate value="${dto.regdate }" var="regdate" pattern="yyyy-MM-dd HH:mm:ss" />
+						<fmt:formatDate value="${regdate }" pattern="yyyy-MM-dd" />
+					</span> 
+					<span class="q_date">
+					작성자 : ${dto.nickname }
+					</span>
+					<span class="q_date">
+					읽은횟수 : ${dto.visited }
+					</span>
+		      </div><br>
 				<div class="button-group">
-				  <a class="button" href="${path1 }/free/list.do">글 목록</a>
-				  <a class="button" href="${path1 }/free/delete.do?fseq=${dto.fseq}">글 삭제</a>
-				  <a class="button" href="${path1 }/free/edit.do?fseq=${dto.fseq}">글 수정</a>
+				  <a class="button hollow" href="${path1 }/free/list.do">
+				  <span>목록
+			        <i class="fi-list"></i>
+			        </span>
+				  </a>
+				  <c:if test="${sid eq dto.nickname }">
+				  <a class="button hollow" href="${path1 }/free/edit.do?fseq=${dto.fseq}">
+				 <span>수정
+			         <i class="fi-pencil"></i>
+			         </span>
+				  </a>
+				  <a class="button hollow alert" href="${path1 }/free/delete.do?fseq=${dto.fseq}">
+				  <span>삭제
+			        <i class="fi-trash"></i>
+			        </span>
+				  </a>
+				  </c:if>
+				  <c:if test="${sid eq 'admin' }">
+				  <a class="button hollow alert" href="${path1 }/free/delete.do?fseq=${dto.fseq}">
+				  <span>삭제
+			        <i class="fi-trash"></i>
+			        </span>
+				  </a>
+				  </c:if>
 				</div>
+	      </div>
 	      </div>
 	    </div>
 	</div>

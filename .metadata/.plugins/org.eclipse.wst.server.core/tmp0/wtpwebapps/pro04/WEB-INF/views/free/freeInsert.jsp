@@ -17,10 +17,12 @@
 <jsp:include page="../include/header.jsp" />
 
 <div class="content1" id="content1">
-    <div class="row column text-center">
-      <h2 class="h1">공지사항 글쓰기</h2>
-      <hr>
+    <div class="row column text-center"><br>
+      
       <div class="container">
+      <div class="wrap">
+      <h2 class="title">자유게시판 글쓰기</h2>
+      <hr>
       	<form action="${path1 }/free/insert.do" method="post">
 		      <table id="table1">
 		      	<tbody>
@@ -46,14 +48,19 @@
 		      			</td>
 		      		</tr>
 		      		<tr>
-		      			<td colspan="2">
-		      				<input type="submit" class="submit success button" value="글 등록" >
-		      				<a class="button" href="${path1 }/free/list.do">글 목록</a>
+		      			<td colspan="2" style="float:left;">
+		      				<input type="submit" class="button hollow" value="글 등록" >
+		      				<a class="button hollow" href="${path1 }/free/list.do">
+							<span>목록
+		        	  	<i class="fi-list"></i>
+		        	    </span>
+							</a>
 		      			</td>
 		      		</tr>
 		      	</tbody>
 		      </table>
-		   </form>   
+		   </form>  
+		   </div> 
       </div>
     </div>
 </div>

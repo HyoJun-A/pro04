@@ -16,18 +16,21 @@
 <body>
 <jsp:include page="../include/header.jsp" />
 <div class="content" id="content">
-	    <div class="row column text-center">
-	      <h2 class="h1">답변 등록</h2>
-	      <hr>
+	    <div class="row column">
+	     
 	      <div class="container">
+	      <div class="wrap"><br>
+	       <h2 class="title">답변 등록</h2>
+	      <hr>
 	      	   <form action="./wright.do" method="post">
 					<table class="table">
 					   <tbody>
 					    <tr>
-					      <th><label for="title">제목</label></th>
+					      <th><label for="title">작성자</label></th>
 					      <td>
 					      <input type="text" class="input" name="author" id="author" value="${sid }" readonly="readonly">
-					      <input type="text" class="input" maxlength="120" name="title" id="title" placeholder="제목 입력" required />
+					      <input type="hidden" class="input" maxlength="120" name="title" id="title" value="답변"/>
+					      <input type="hidden" id="parno" name="parno" value="${no }">
 					      </td>
 					    </tr>
 					    <tr>
@@ -36,12 +39,25 @@
 					    </tr>
 					  </tbody>
 					</table>
-					<div class="buttons">
-					  <button type="submit" class="button is-success">등록</button>
-					  <button type="reset" class="button is-warning">취소</button>
-					  <a href="./list.do" class="button is-success">목록</a>
-					</div>
+					<div class="buttons" style="float:left;">
+						<a href="./list.do" class="button hollow">
+						<span>목록
+		        	  	<i class="fi-list"></i>
+		        	    </span>
+						</a>
+					  <button type="submit" class="button hollow">
+					  <span>등록
+		        	  	<i class="fi-plus"></i>
+		        	    </span>
+					  </button>
+					  <button type="reset" class="button hollow alert">
+					  <span>취소
+			        <i class="fi-trash"></i>
+			        </span>
+			        </button>
+			        </div>
 				</form>
+	      </div>
 	      </div>
 	    </div>
 	</div>

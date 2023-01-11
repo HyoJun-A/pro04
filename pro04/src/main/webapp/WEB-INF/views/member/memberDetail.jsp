@@ -28,10 +28,12 @@
 	 	<jsp:include page="../include/header.jsp"></jsp:include>
 	
 	<div class="content" id="con">
-	    <div class="row column text-center">
+
+	    <div class="row column">
 	      <div class="container">
+	      	<div class="wrap">
 	      	<c:if test="${sid=='admin' }">
-			<h2 class="page_tit">회원 정보 수정</h2>
+			<h2 class="title">회원 정보 수정</h2>
 			</c:if>
 			<c:if test="${sid!='admin' }">
 			<h2 class="page_tit">마이 페이지</h2>
@@ -130,6 +132,7 @@
 				}
 				</script>
 				<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	      </div>
 	      </div>
 	    </div>
 	</div>
