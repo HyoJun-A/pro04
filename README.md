@@ -28,30 +28,6 @@
  #### Server
  * Tomcat 9
  
- #### POM.XML
- * AspectJ
- * slf4j
- * inject
- * servlet
- * junit
- * springframework
- * war
- * lombok
- * log4j2
- * spring-tx
- * spring-jdbc
- * commons-dbcp
- * ojdbc6
- * mybatis
- * gson
- * jackson-databind
- * spring-security
- * commons-fileupload
- * commons-io
- * imgscalr-lib
- * validation-api
- * hibernate-annotations
- 
  #### Front End
  * Foundation framework
  * HTML, CSS, JavaScript
