@@ -1,7 +1,7 @@
 # HJpoto 가상 홈페이지
 
 ## Front 화면
-* https://hyojun-a.github.io/web03/
+* https://hyojun-a.github.io/web04
 
 ## 프로젝트 개요
  "HJpoto"라는 가상의 기업을 주제로 프론트엔드 부분을 프로토타입, 스토리보드, 메뉴구조도를 활용하여 계획을 세우고, HTML, CSS, JavaScript,
