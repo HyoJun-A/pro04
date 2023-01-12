@@ -51,11 +51,52 @@
 ## 프로젝트 설계
  
 ### 백엔드 구현 로직(MVC2)
+![mvc](./file/pro/s4.PNG "mvc")
+
 
 ### 데이터베이스 구조도(ERD)
+![erd](./file/erd.png "erd")
 
 ### 메뉴 구조도
+![메뉴구조도](./file/pro/s1.PNG "메뉴구조도")
+
+### UI프로세스
+![UI프로세스](./file/pro/s2.PNG "UI프로세스")
+![UI프로세스](./file/pro/s3.PNG "UI프로세스")
+
+### 스토리보드
+![스토리보드](./file/story/1.PNG "스토리보드")
+![스토리보드](./file/story/2.PNG "스토리보드")
+![스토리보드](./file/story/3.PNG "스토리보드")
+![스토리보드](./file/story/4.PNG "스토리보드")
+![스토리보드](./file/story/5.PNG "스토리보드")
+![스토리보드](./file/story/6.PNG "스토리보드")
+![스토리보드](./file/story/7.PNG "스토리보드")
+![스토리보드](./file/story/8.PNG "스토리보드")
+![스토리보드](./file/story/9.PNG "스토리보드")
 
 ### 프로토타입
+![프로토타입](./file/prototype/1.png "프로토타입")
+![프로토타입](./file/prototype/2.png "프로토타입")
+![프로토타입](./file/prototype/3.png "프로토타입")
+![프로토타입](./file/prototype/4.png "프로토타입")
 
 ### 기능 구현 화면
+![기능구현](./file/view/1.png "기능구현")
+![기능구현](./file/view/2.png "기능구현")
+![기능구현](./file/view/3.png "기능구현")
+![기능구현](./file/view/4.png "기능구현")
+![기능구현](./file/view/5.png "기능구현")
+![기능구현](./file/view/6.png "기능구현")
+![기능구현](./file/view/7.png "기능구현")
+![기능구현](./file/view/8.png "기능구현")
+![기능구현](./file/view/9.png "기능구현")
+![기능구현](./file/view/10.png "기능구현")
+![기능구현](./file/view/11.png "기능구현")
+![기능구현](./file/view/12.png "기능구현")
+![기능구현](./file/view/13.png "기능구현")
+![기능구현](./file/view/14.png "기능구현")
+![기능구현](./file/view/15.png "기능구현")
+![기능구현](./file/view/16.png "기능구현")
+![기능구현](./file/view/17.png "기능구현")
+![기능구현](./file/view/18.png "기능구현")
